@@ -1,0 +1,547 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+:root {
+    /*Warna*/
+    /*--primary-color: #2628bc;
+    --secondary-color: #c21313d3; */
+    --primary-color: #1e90ff; /* Biru ala Captain America */
+    --secondary-color: #d32f2f; /* Merah ala Iron Man */
+    --white-color: #fff;
+
+    /*Ukuran Font*/
+    --font-size-vs: 0.75rem;
+    --font-size-s: 1rem;
+    --font-size-m: 1.5rem;
+    --font-size-l: 2.25rem;
+
+    /* font-weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border radius */
+    --border-radius-small: 0.5rem;
+    --border-radius-medium: 1.57rem;
+    --border-radius-circle: 50%;
+
+    /* Site-max-width */
+    --site-max-width: 1300px;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Style Website*/
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    max-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.section-container {
+    max-width: var(--site-max-width);
+    margin: 0;
+    padding: 2rem 0.5rem;
+}
+
+.section-title::after{
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius-medium);
+}
+
+/* style for header sect*/
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
+
+.header .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.header .nav-bar .nav-menu {
+    display: flex;
+    gap: 24px;
+}
+
+.header .nav-menu .nav-link {
+    color: var(--white-color);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-m);
+    transition: 0.4s ease;
+}
+
+.header .nav-menu .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-bar :where(#open-menu-button, #menu-close-button) {
+    display: none;
+}
+
+.nav-bar.scrolled {
+    width: 100%;
+    background: var(--secondary-color);
+    opacity: 0.98;
+}
+
+/* Style for hero sect */
+.hero-section {
+    background: var(--secondary-color);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.hero-section .hero-wrapper {
+    min-height: 100vh;
+}
+
+.hero-wrapper .hero-slider::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-wrapper .hero-login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+}
+
+.hero-wrapper .hero-login-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 50%;
+    max-width: 758px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hero-wrapper .hero-login-box h1 {
+    font-family: Arial rgb(0, 0, 0);
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+/* Style untuk input dan button */
+.hero-wrapper .hero-login-box-input-uss[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.hero-wrapper .hero-login-box-input-pass[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.hero-wrapper .hero-login-box-button {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #122889;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.hero-wrapper .hero-login-box button:hover {
+    background-color: #ff5722;
+}
+
+.hero-wrapper .hero-image-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 768px;
+    width: 100%;
+    padding: 0 0.5rem;
+    text-align: center;
+    color: var(--white-color);
+}
+
+.hero-wrapper .image-tittle {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    margin-bottom: 1rem;
+}
+
+.hero-wrapper .image-decription {
+    font-size: var(--font-size-m);
+}
+
+.hero-section .swiper-slider-button {
+    color: var(--white-color);
+}
+
+.hero-section .swiper-slider-button:hover {
+    color: var(--primary-color);
+}
+
+.hero-section .swiper-button-prev {
+    margin-left: 1rem;
+}
+
+.hero-section .swiper-button-next {
+    margin-right: 1rem;
+}
+
+.hero-section .swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+    background: var(--white-color);
+}
+
+/* Logo Telyu */
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    z-index: 10;
+}
+
+/* Styling for about us section */
+.about-us {
+    padding: 3rem 0 0;
+  }
+  
+  .about-us .about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .about-wrapper .about-text-wrapper {
+    max-width: 750px;
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    margin: auto;
+  }
+  
+  .about-wrapper .about-text-wrapper .about-description {
+    font-size: var(--font-size-m);
+    line-height: 32px;
+    letter-spacing: 1px;
+  }
+  
+  /* Styling for our services section */
+  .our-fasilitas {
+    padding: 3rem 0 2rem;
+    background: var(--secondary-color);
+    color: var(--white-color);
+  }
+  
+  .our-fasilitas .section-title::after {
+    background: var(--white-color);
+  }
+  
+  .our-fasilitas .fasilitas-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .our-fasilitas .fasilitas-list .fasilitas-item {
+    width: calc(100% / 2 - 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .our-fasilitas .fasilitas-item .fasilitas-image {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+  }
+  
+  .our-fasilitas .fasilitas-item .fasilitas-details {
+    max-width: 400px;
+  }
+  
+  .fasilitas-item .fasilitas-details .fasilitas-title {
+    font-size: var(--font-size-m);
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .fasilitas-item .fasilitas-details .fasilitas-description {
+    font-style: italic;
+    font-weight: var(--font-weight-medium);
+  }
+  
+  /* Styling for contact us section */
+  .contact-us {
+    padding: 3rem 0 2rem;
+    background: rgba(0, 0, 0, 0.5) url(images/contact-background.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+  }
+  
+  .contact-us .section-container .contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  
+  .contact-us .contact-form input,
+  .contact-us .contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    font-size: var(--font-size-s);
+    margin: 1rem 0;
+    border-radius: var(--border-radius-small);
+    border: 2px solid var(--primary-color);
+    outline: none;
+  }
+  
+  .contact-us .contact-form textarea {
+    height: 150px;
+  }
+  
+  .contact-us .contact-form .button {
+    background: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: var(--border-radius-medium);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+    float: right;
+    transition: 0.3s ease;
+  }
+  
+  .contact-us .contact-form .button:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+  }
+  
+  /* Styling for footer section */
+  .footer {
+    background: var(--secondary-color);
+    color: var(--white-color);
+  }
+  
+  .footer .footer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .footer .footer-list .footer-heading {
+    font-size: var(--font-size-m);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer .nav-item {
+    margin-bottom: 1rem;
+  }
+  
+  .footer .footer-link {
+    color: var(--white-color);
+  }
+  
+  .footer .footer-link:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+  
+  .footer .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer .open-time {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer .open-time p {
+    margin: 5px 0;
+  }
+  
+  /* Responsive media queries code for max-width: 1024px */
+  @media screen and (max-width: 1024px) {
+    :root {
+      /* Font size */
+      --font-size-s: 0.75rem;
+      --font-size-m: 1rem;
+      --font-size-l: 2rem;
+    }
+  
+    .nav-bar :where(#open-menu-button, #menu-close-button) {
+      display: block;
+      font-size: var(--font-size-m);
+    }
+  
+    .nav-bar #menu-close-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+  
+    .nav-bar #open-menu-button {
+      color: var(--white-color);
+    }
+  
+    body.show-mobile-menu .header::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(5px);
+    }
+  
+    .header .nav-bar .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 90px;
+      width: 260px;
+      height: 100vh;
+      background: var(--white-color);
+      transition: 0.3s ease;
+    }
+  
+    body.show-mobile-menu .nav-bar .nav-menu {
+      left: 0;
+    }
+  
+    .header .nav-bar .nav-menu .nav-link {
+      color: var(--secondary-color);
+      display: block;
+      margin-top: 1rem;
+    }
+  
+    .header .nav-bar .nav-menu .nav-link:hover {
+      color: var(--primary-color);
+    }
+  
+    .hero-section .swiper-slider-button {
+      display: none;
+    }
+  
+    .our-service .service-list .service-item {
+      width: 100%;
+    }
+  }
+  
+  /* Responsive media queries code for max-width: 768px */
+  @media screen and (max-width: 768px) {
+    .about-us .about-wrapper {
+      flex-direction: column;
+    }
+  
+    .our-menu .menu-list .menu-item {
+      width: calc(100% / 2 - 3rem);
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .hero-wrapper .image-title {
+      font-size: var(--font-size-m);
+    }
+  
+    .hero-wrapper .image-description {
+      font-size: var(--font-size-s);
+    }
+  
+    .our-service .service-list .service-item {
+      flex-direction: column;
+      gap: 0;
+    }
+  
+    .our-service .service-item .service-details {
+      text-align: center;
+    }
+  
+    .our-menu .menu-list {
+      gap: 1rem;
+    }
+  
+    .our-menu .menu-list .menu-item {
+      width: 100%;
+    }
+  
+    .contact-us .contact-form input,
+    .contact-us .contact-form textarea {
+      margin: 0.5rem 0;
+    }
+  
+    .footer .footer-list .footer-heading {
+      margin-bottom: 1rem;
+    }
+  
+    .footer .nav-item {
+      margin-bottom: 0.5rem;
+    }
+  
+    .footer .open-time {
+      margin-bottom: 1rem;
+    }
+  }
+  
+

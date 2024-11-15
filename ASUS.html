@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TERRAS || TEL-U Room Reservation System</title>
+    <link rel="icon" type="image/x-icon" href="Logo_Asus_Trans-removebg-preview-25.png">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background image with gradient */
+        .hero {
+            background: radial-gradient(rgba(67, 5, 5, 0.097), rgba(122, 62, 62, 0.2)), url(https://logas.id/booking/assets/tel-u.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgb(33, 13, 220);
+            text-align: center;
+            position: sticky;
+        }
+
+        .logo {
+            background-image: url("Logo-Horizontal-Telyu.png");
+            background-size: auto;
+            background-position: top;
+            height: 25vh;
+
+        }
+
+        /* Overlay for blur and gradient */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        /*    backdrop-filter: blur(5px); */
+            z-index: 1;
+        }
+
+        /* Content on the homepage */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-content:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Call to action button */
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #434141;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #b90d0d;
+            transform: translateY(-5px);
+        }
+
+        /* Dropdown for room availability */
+        .dropdown {
+            display: none;
+            margin-top: 20px;
+            background-color: #161370;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .dropdown select {
+            padding: 10px;
+            border: 1px solid #494646;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 3;
+            backdrop-filter: blur(5px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f0f0f0;
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2em;
+            }
+
+            h4 {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+            }
+
+            .hero {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 2em;
+            }
+
+            h4 {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 0.9em;
+            }
+
+            .hero {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <!--<nav>-->
+    <!--    <ul>-->
+    <!--        <li><a href="#">Home</a></li>-->
+    <!--        <li><a href="#">About</a></li>-->
+    <!--        <li><a href="#">Features</a></li>-->
+    <!--        <li><a href="#">Contact</a></li>-->
+    <!--    </ul>-->
+    <!--</nav>-->
+
+    <!-- Hero section with background image -->
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2>TERRAS</h2>
+            <h4>TEL-U Room Reservation System</h4>
+            <button class="cta-button" id="checkRoomBtn">Cek Ketersediaan Ruangan</button>
+            <br>
+            <br>
+            <button class="cta-button" id="">Progress Peminjaman</button>
+    
+            <!-- Dropdown for room availability -->
+            <div class="dropdown" id="roomDropdown" style="display: none;">
+                <select name="id_gedung" id="gedungDropdown">
+                    <option value="">-- Pilih Gedung --</option>
+                                            <option value="1">GSG</option>
+                                            <option value="2">STUDENT CENTER</option>
+                                            <option value="4">SPORT CENTER</option>
+                                            <option value="5">MANTERAWU</option>
+                                            <option value="6">GEDUNG DAMAR</option>
+                                            <option value="7">TERAS PRIANGAN</option>
+                                            <option value="8">GREEN LOUNGE</option>
+                                            <option value="9">TULT</option>
+                                            <option value="10">TUCH</option>
+                                            <option value="11">MARATUA</option>
+                                            <option value="12">KAWALUSU</option>
+                                            <option value="13">SELARU</option>
+                                            <option value="14">SEBATIK</option>
+                                            <option value="15">BANGKIT</option>
+                                            <option value="16">BATEK (BTP)</option>
+                                            <option value="17">KAWASAN</option>
+                                            <option value="18">BARUNG (N)</option>
+                                            <option value="19">GEGERKALONG </option>
+                                            <option value="20">TENNIS HALL</option>
+                                    </select>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        document.getElementById('checkRoomBtn').addEventListener('click', function() {
+            const dropdown = document.getElementById('roomDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' ? 'block' : 'none';
+        });
+
+        document.getElementById('gedungDropdown').addEventListener('change', function() {
+            const idGedung = this.value;
+            if (idGedung) {
+                window.location.href = `https://logas.id/booking/resv/indexCari/${idGedung}`;
+            }
+        });
+    </script>
+</body>
+</html>
